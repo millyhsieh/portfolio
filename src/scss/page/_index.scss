@@ -131,10 +131,6 @@
   .card {
     width: calc(100% + 60px);
 
-    @include tablet {
-      // width: calc(50% - 60px);
-    }
-
     &__list {
       display: flex;
       flex-wrap: wrap;
@@ -165,6 +161,7 @@
       &:hover {
         .card__content {
           opacity: 1;
+          background-color: rgba($black, 0.6);
         }
       }
     }
@@ -177,6 +174,11 @@
       background-color: rgba($black, 0.6);
       border-radius: 4px;
       transition: .3s;
+
+      @include tablet {
+        opacity: 1;
+        background-color: rgba($black, 0);
+      }
 
       .link {
         position: absolute;
@@ -199,6 +201,10 @@
           font-weight: 500;
           color: $white;
           text-align: center;
+
+          @include tablet {
+            display: none;
+          }
         }
 
         &__button {
@@ -209,6 +215,10 @@
           background-color: $white;
           text-align: center;
           border-radius: 5px;
+
+          @include tablet {
+            box-shadow: 0 0 40px rgb(0 0 0 / 25%);
+          }
         }
       }
     }
