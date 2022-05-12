@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  letter-spacing: 0.02rem;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+}
+
+a, button {
+  text-decoration: none;
+  color: inherit;
+  border: none;
+  outline: none;
+
+  &:hover {
+    text-decoration: none;
+    color: $grey-dark;
+    transition: .3s;
+  }
+}
+
+p {
+  line-height: 1.8rem;
+  letter-spacing: 0.04rem;
+  margin-bottom: 0.5rem;
+  color: $grey-dark;
+
+  strong {
+    color: $grey-dark;
+  }
+
+  a {
+    border-bottom: 1px dotted $grey-light;
+    color: $grey-light;
+    
+    &:hover {
+      color: $grey-dark;
+    }
+  }
+}
+
+code {
+  font-size: 13px;
+  color: lighten($grey-dark, 5%);
+}
+
+img {
+  display: block;
+}

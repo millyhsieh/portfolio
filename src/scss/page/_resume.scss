@@ -1,0 +1,228 @@
+main {
+  margin: 120px auto;
+  padding: 60px 50px;
+  max-width: 800px;
+  background-color: $white;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px 0 rgba($black, 0.05);
+
+  @include resume-mobile {
+    margin: 30px 20px;
+    padding: 25px;
+  }
+}
+
+.primary-title {
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 900;
+  font-family: 'Noto Serif TC', serif;
+
+  @include resume-mobile {
+    font-size: 20px;
+  }
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 3px solid $grey-dark;
+
+  @include resume-mobile {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid $grey-dark;
+  }
+  
+  &__name {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 50px;
+    font-weight: 900;
+
+    @include resume-mobile {
+      flex-direction: row;
+      font-size: 30px;
+      margin-bottom: 15px;
+
+      span {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &__introduction {
+    text-align: right;
+    font-size: 14px;
+
+    @include resume-mobile {
+      text-align: left;
+      font-size: 15px;
+    }
+
+    a {
+      display: inline-block;
+    }
+
+    :not(.blog), a {
+      margin-bottom: 10px;
+      line-height: 1rem;
+    }
+
+    .phone {
+      margin-bottom: 7px;
+      font-size: 15px;
+
+      @include resume-mobile {
+        font-size: 16px;
+      }
+    }
+
+    .school {
+      margin-bottom: 3px;
+      font-size: 13px;
+    }
+
+    .blog {
+      margin-bottom: 0;
+
+      a {
+        margin-bottom: 0;
+        color: $grey-dark;
+
+        &:hover {
+          color: $grey-light;
+        }
+      }
+    }
+  }
+}
+
+.experience {
+  margin-bottom: 50px;
+
+  @include resume-mobile {
+    margin-bottom: 20px;
+  }
+
+  &__content + &__content {
+    margin-top: 20px;
+  }
+
+  .job-position {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.76;
+  }
+
+  .company {
+    margin-bottom: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 2;
+    color: $grey-light;
+
+    span {
+      margin-left: 10px;
+      font-size: 14px;
+    }
+
+    @include resume-mobile {
+      display: flex;
+      flex-direction: column;
+
+      span {
+        margin: -5px 0 0 0;;
+      }
+    }
+  }
+
+  .work {
+    padding-left: 15px;
+    font-size: 14px;
+    line-height: 1.76;
+
+    &__item {
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: -10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: $grey-dark;
+      }
+    }
+
+    @include resume-mobile {
+      line-height: 1.5;
+
+      &__item {
+        margin-bottom: 5px;
+
+      &::before {
+        top: 12px;
+      }
+      }
+    }
+  }
+}
+
+.tool-skill {
+  display: flex;
+  justify-content: space-between;
+
+  @include resume-mobile {
+    flex-direction: column;
+
+    .tool {
+      margin-bottom: 20px;
+    }
+  }
+
+  .tool, .skill {
+    &__list {
+      padding-left: 15px;
+      font-size: 14px;
+      line-height: 1.76;
+
+      @include resume-mobile {
+        line-height: 1.5;
+      }
+    }
+  
+    &__item {
+      position: relative;
+  
+      &::before {
+        content: "";
+        position: absolute;
+        left: -10px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: $grey-dark;
+      }
+
+      @include resume-mobile {
+          margin-bottom: 5px;
+  
+        &::before {
+          top: 12px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.footer {
+  @include mobile {
+    margin-bottom: 30px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto 60px auto;
+    padding: 20px 0 0 0;
+    border-top: 1px solid $grey-light;
+    font-size: 13px;
+
+    @include mobile {
+      flex-direction: column;
+      margin: 0;
+    }
+  }
+
+  &__links {
+    display: flex;
+
+    @include mobile {
+      margin-bottom: 10px;
+    }
+
+    li + li {
+      margin-left: 15px;
+    }
+
+    a {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        left: 0;
+        bottom: 2px;
+        content: "";
+        height: 1px;
+        width: 100%;
+        background: $grey-light;
+      }
+
+      &:hover {
+        color: $grey-light;
+      }
+    }
+    
+  }
+}

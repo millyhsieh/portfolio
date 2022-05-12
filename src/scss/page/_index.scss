@@ -1,0 +1,220 @@
+.introduction {
+  margin: 100px 0;
+  font-family: 'Noto Serif TC', serif;
+
+  p {
+    font-size: 35px;
+    font-weight: bold;
+    line-height: 1.6;
+    letter-spacing: 1px;
+  }
+
+  @include mobile {
+    margin: 50px 30px;
+
+    p {
+      font-size: 22px;
+
+      &:nth-child(2) {
+        font-size: 20px;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: $grey-light;
+
+    @include mobile {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+
+    &:hover {
+      color: $grey-dark;
+
+      p {
+        color: $grey-dark;
+
+        &::after {
+          background: $grey-dark;
+        }
+      }
+    }
+
+    p {
+      position: relative;
+      margin-right: 5px;
+      font-size: 20px;
+      color: $grey-light;
+      font-weight: bold;
+      transition: .3s;
+
+      &::after {
+        position: absolute;
+        left: 0;
+        bottom: 2px;
+        content: "";
+        height: 1px;
+        width: 100%;
+        background: $grey-light;
+      }
+    }
+
+    i {
+      font-size: 15px
+    }
+  }
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__nav {
+    display: flex;
+    margin-bottom: 50px;
+    padding: 15px 60px 22px;
+    width: fit-content;
+    border-radius: 30px;
+    background-color: $white;
+    box-shadow: 0 0 25px 0 rgba($black, 0.05);
+    color: $grey-light;
+
+    @include mobile {
+      margin-bottom: 30px;
+      padding: 15px 40px 22px;
+    }
+
+    li {
+      font-weight: 600;
+      cursor: pointer;
+
+      &:hover {
+        color: $grey-dark;
+      }
+    }
+
+    li + li {
+      margin-left: 50px;
+
+      @include mobile {
+        margin-left: 30px;
+      }
+    }
+
+    .current {
+      position: relative;
+      color: $grey-dark;
+
+      &::after {
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        content: "";
+        width: 5px;
+        height: 5px;
+        background: $sub-color;
+        border-radius: 50%;
+      }
+
+    }
+  }
+
+  .card {
+    width: calc(100% + 60px);
+
+    @include tablet {
+      // width: calc(50% - 60px);
+    }
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      margin: 0 30px 60px;
+      width: calc(50% - 30px);
+      max-width: 420px;
+      height: 25vw;
+      border: solid 1px#e0e0e0;
+      border-radius: 5px;
+      background: top center no-repeat;
+      background-size: cover;
+
+      @media(max-width: 1279px) {
+        width: calc(50% - 60px);
+        height: 30vw;
+      }
+
+      @include mobile {
+        margin: 0 30px 30px;
+        width: 100%;
+        max-width: 100%;
+        height: 64vw;
+      }
+
+      &:hover {
+        .card__content {
+          opacity: 1;
+        }
+      }
+    }
+
+    &__content {
+      opacity: 0;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background-color: rgba($black, 0.6);
+      border-radius: 4px;
+      transition: .3s;
+
+      .link {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        padding: 10px;
+        background-color: $white;
+        border-radius: 50%;
+      }
+
+      .detail {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        width: calc(100% - 40px);
+
+        &__title {
+          margin-bottom: 20px;
+          font-size: 20px;
+          font-weight: 500;
+          color: $white;
+          text-align: center;
+        }
+
+        &__button {
+          display: block;
+          padding: 15px 0;
+          font-size: 15px;
+          font-weight: bold;
+          background-color: $white;
+          text-align: center;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+}
+
+.hide {
+  display: none !important;
+}

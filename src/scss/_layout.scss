@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700;900&display=swap');
+
+body {
+  background-color: $main-background;
+  color: $grey-dark;
+  font-family: 'Open Sans','Noto Sans TC', '微軟正黑體', Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+  margin: 0 auto;
+  padding: 0 50px;
+  max-width: 1000px;
+
+  @include mobile {
+    padding: 0 30px;
+  }
+}
